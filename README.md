@@ -81,6 +81,8 @@ The application consists of 2 main parts:
 
     - `suspend PERIOD`: Commands the currently connected server to `sleep` for `PERIOD` seconds, during which that server node basically exists the system and re-enters after `PERIOD` seconds.
 
+    - `quit`: Terminates the Client.
+
     To run a `client node`, simply run an instance of `client.py` as such:
 
     Example 1: 
