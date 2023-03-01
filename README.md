@@ -109,5 +109,13 @@ The application consists of 2 main parts:
         >quit
         The client ends
 
+### Author Contact Info:
+    Jaffar Totanji
+    Email: jaafarti@gmail.com
+    Telegram: @KuroHata7
 
+    Ahmad Haidar
+    Email: togoyany@gmail.com
+    Telegram: @XmtosX
 
+##### P.S: This work was done as a solution to an assignment given to us as part of the Distributed and Network Programming course at IU.
