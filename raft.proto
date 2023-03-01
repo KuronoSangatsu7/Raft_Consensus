@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+service RaftService {
+    rpc RequestVote (RequestVoteRequest) returns (RequestVoteResponse) {};
+    rpc AppendEntries (AppendEntriesRequest) returns (AppendEntriesResponse) {};
+    rpc GetLeader (Empty) returns (GetLeaderResponse) {};
+    rpc Suspend (SuspendRequest) returns (Empty) {};
+    rpc SetVal (SetValRequest) returns (SetValResponse) {};
+    rpc GetVal (GetValRequest) returns (GetValResponse) {};
+}
+
+message TermCandIDPair {
+    int32 term = 1;
+    int32 candidateID = 2;
+}
+
+message RequestVoteRequest {
+    TermCandIDPair candidate = 1;
+    int32 lastLogIndex = 2;
+    int32 lastLogTerm = 3;
+}
+
+message TermResultPair {
+    int32 term = 1;
+    bool verdict = 2;
+}
+
+message RequestVoteResponse {
+    TermResultPair result = 1;
+}
+
+message TermLeaderIDPair {
+    int32 term = 1;
+    int32 leaderID = 2;
+}
+
+// TODO Ask ahmad about appropriate type of command
+message LogEntry {
+    int32 term = 1;
+    string command = 2;
+}
+
+message AppendEntriesRequest {
+    TermLeaderIDPair leader = 1;
+    int32 prevLogIndex = 2;
+    int32 prevLogTerm = 3;
+    repeated LogEntry entries = 4;
+    int32 leaderCommit = 5;
+}
+
+message AppendEntriesResponse {
+    TermResultPair result = 1;
+}
+
+message Empty {}
+
+message GetLeaderResponse {
+    int32 nodeId = 1;
+    string nodeAddress = 2;
+}
+
+message SuspendRequest {
+    int32 period = 1;
+}
+
+message SetValRequest {
+    string key = 1;
+    string value = 2;
+}
+
+message SetValResponse {
+    bool verdict = 1;
+}
+
+message GetValRequest {
+    string key = 1;
+}
+
+message GetValResponse {
+    bool verdict = 1;
+    string value = 2;
+}
