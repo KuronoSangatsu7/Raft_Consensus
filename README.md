@@ -38,7 +38,7 @@ The application consists of 2 main parts:
 
     Example 1:
 
-        >python server.py 0
+        >python3 server.py 0
         The server starts at 127.0.0.1:50000
         I am a follower. Term: 0
         The leader is dead
@@ -51,7 +51,7 @@ The application consists of 2 main parts:
     
     Example 2:
 
-       >python server.py 0
+        >python3 server.py 0
         The server starts at 127.0.0.1:50000
         I am a follower. Term: 0
         The leader is dead
@@ -85,7 +85,7 @@ The application consists of 2 main parts:
 
     Example 1: 
 
-        >python client.py
+        >python3 client.py
         The client starts
         > connect 127.0.0.1 50001
         > getleader
@@ -98,7 +98,7 @@ The application consists of 2 main parts:
 
     Example 2:
 
-        >python client.py
+        >python3 client.py
         The client starts
         >connect 127.0.0.1 50000
         >getleader
